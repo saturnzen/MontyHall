@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Monty Hall Game</title>
+
+
+<style>
+  body { font-family: sans-serif; text-align: center; padding: 20px; }
+  .door { display: inline-block; width: 100px; height: 150px; margin: 10px; 
+          background-color: #ccc; line-height: 150px; font-size: 24px; cursor: pointer; }
+  .opened { background-color: #eee; cursor: default; }
+  .buttons { margin-top: 20px; }
+  button { margin: 5px; padding: 10px 20px; font-size: 16px; }
+  table { margin: 20px auto; border-collapse: collapse; }
+  th, td { border: 1px solid #333; padding: 5px 10px; }
+</style>
+<link rel="stylesheet" href="style.css">  
+</head>
+<body>
+
+<h1>Monty Hall Game</h1>
+<button id="langBtn">EN</button>
+<div id="instructionsToggle" >
+  <button id="instrBtn" style="cursor:pointer; padding:8px 12px; font-weight:bold;">
+    Instructions
+  </button>
+  <div id="instructionsContent" style="display:none; margin-top:10px; text-align:center;">
+    <p id="instr" >Bàn phím: 1-3 chọn cửa, Mũi tên/Tab đổi Giữ/Đổi, Enter xác nhận.</p>
+  </div>
+</div>
+
+<h2 id="instruction">Bấm vào cửa để bắt đầu chơi</h2>
+<div id="doors">
+  <div class="door" data-index="0">Door 1</div>
+  <div class="door" data-index="1">Door 2</div>
+  <div class="door" data-index="2">Door 3</div>
+</div>
+
+<div class="buttons">
+  <button id="startBtn" style="display: none;">Chơi lại</button>
+  <button id="changeBtn" disabled>Đổi cửa</button>
+  <button id="stayBtn" disabled>Không đổi</button>
+</div>
+
+<h3 id="resultTitle">Kết quả</h3>
+<table>
+  <tr>
+    <th id="totalLabel">Tổng lượt chơi</th>
+    <th id="changeCountLabel">Lượt đổi</th>
+    <th id="winChangeLabel">Lượt thắng khi đổi</th>
+    <th id="winStayLabel">Lượt thắng khi không đổi</th>
+  </tr>
+  <tr>
+    <td id="total">0</td>
+    <td id="changeCount">0</td>
+    <td id="winChange">0</td>
+    <td id="winStay">0</td>
+  </tr>
+</table>
+
+<button id="pushFirebaseBtn">Push lên Firebase</button>
+<button id="resetBtn">Reset Bảng</button>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script src="app.js"></script>
+
+</body>
+<script src="lang.js"></script>
+<script src="app-keyboard-control.js"></script>
+
+</html>
