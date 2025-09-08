@@ -55,7 +55,7 @@ button.selectedBtn {
   display: flex;              /* biến .door thành flex container */
   justify-content: center;    /* canh giữa theo trục ngang */
   align-items: center;        /* canh giữa theo trục dọc */
-  width: 100px;
+  width: 200px;
   height: 150px;
   border: 2px solid #000;
 }
