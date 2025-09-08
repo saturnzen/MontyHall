@@ -36,3 +36,28 @@ button.selectedBtn {
 #instruction {
   transition: opacity 0.5s;
 }
+
+@media screen and (max-width: 456px) {
+  .door {
+    width: 80px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 394px) {
+  #doors{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+ .door {
+  display: flex;              /* biến .door thành flex container */
+  justify-content: center;    /* canh giữa theo trục ngang */
+  align-items: center;        /* canh giữa theo trục dọc */
+  width: 100px;
+  height: 150px;
+  border: 2px solid #000;
+}
+
+}
